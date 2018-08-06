@@ -6,8 +6,9 @@ namespace Server.Message
     public class ConnectorsComponent:Component
     {
         public Dictionary<IPEndPoint, uint> dictionary = new Dictionary<IPEndPoint, uint>();
+        public Dictionary<string, uint> connectionNames = new Dictionary<string, uint>();
         public Dictionary<byte, string> dealers = new Dictionary<byte, string>();
-        internal TaskCompletionSource<uint> conTcs;
+        internal TaskCompletionSource<int> conTcs;
         public void AsClient()
         {
             dealers.Add(ConDefine.connected, typeof(onConnect).Name);

@@ -7,8 +7,10 @@ namespace MServer
         protected override void Handle(uint client, InitOK msg)
         {
             var state = world.GetComponent<StateComponent>(client);
+           
             if (state.state != StateDefine.Readying) return;
             state.state = StateDefine.Ready;
+            System.Console.WriteLine($"InitOkDealer::Handle::state={state.state}");
         }
     }
 }

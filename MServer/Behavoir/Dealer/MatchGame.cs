@@ -6,8 +6,10 @@ namespace MServer
     {
         protected override void Handle(uint client, MatchReq msg)
         {
+            System.Console.WriteLine($"MatchGame::Handle::Type={(msg.mapType == 0 ? 1 : msg.mapType) * 2}");
+            world.Get<Entity>(client).AddComponent<StateComponent>();
             if (!CheckState(client)) return;
-            var mapinfo = world.GetBehavior<FindEmptyMap>().Run(msg.mapType * 2);
+            var mapinfo = world.GetBehavior<FindEmptyMap>().Run((msg.mapType==0?1: msg.mapType) * 2);
             world.GetBehavior<AddPlayer>().Run(mapinfo, client);
             world.GetBehavior<UdpSender>().Send(client, new Matching());
             if (mapinfo.isFull())
@@ -17,6 +19,7 @@ namespace MServer
         }
         private bool CheckState(uint client)
         {
+            System.Console.WriteLine($"MatchGame::CheckState::EntityID={client}");
             return world.GetComponent<StateComponent>(client).state == StateDefine.Waiting;
         }
     }

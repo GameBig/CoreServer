@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "CoreServer\Server.csproj", "{477894A2-F4CE-4464-93CF-BCC987870814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "CoreServer\Server.csproj", "{477894A2-F4CE-4464-93CF-BCC987870814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Physic", "Server.Physic\Server.Physic.csproj", "{0FC16ABE-CA49-4970-8289-D2844EA371CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Physic", "Server.Physic\Server.Physic.csproj", "{0FC16ABE-CA49-4970-8289-D2844EA371CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Message", "Server.Message\Server.Message.csproj", "{4670B75C-C493-47B9-8E16-378337B9A625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Message", "Server.Message\Server.Message.csproj", "{4670B75C-C493-47B9-8E16-378337B9A625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MServer", "MServer\MServer.csproj", "{0711CA82-B9A2-4541-8AF3-D986008A31C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MServer", "MServer\MServer.csproj", "{0711CA82-B9A2-4541-8AF3-D986008A31C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{01F76C7D-E811-45E1-B133-E8C19D845DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{01F76C7D-E811-45E1-B133-E8C19D845DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServerApp", "WebServerApp\WebServerApp.csproj", "{9D378DD7-6F74-4816-9E15-007AB782C2A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServerApp", "WebServerApp\WebServerApp.csproj", "{9D378DD7-6F74-4816-9E15-007AB782C2A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F58C435C-0BAB-4085-8B26-ACAC91073F49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{9D378DD7-6F74-4816-9E15-007AB782C2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D378DD7-6F74-4816-9E15-007AB782C2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D378DD7-6F74-4816-9E15-007AB782C2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58C435C-0BAB-4085-8B26-ACAC91073F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58C435C-0BAB-4085-8B26-ACAC91073F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58C435C-0BAB-4085-8B26-ACAC91073F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58C435C-0BAB-4085-8B26-ACAC91073F49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

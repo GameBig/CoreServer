@@ -3,6 +3,10 @@ public struct Vec2Int : IToBytes
 {
     public int x { get; set; }
     public int y { get; set; }
+    public Vec2Int(int x,int y)
+    {
+        this.x = x;this.y = y;
+    }
     public static Vec2Int operator +(Vec2Int a, Vec2Int b)
     {
         a.x += b.x;

@@ -80,6 +80,18 @@ namespace Server
                 if (update != null) updates.Add(update);
             }
         }
+        public void AddBehever<T>() where T : Behavior, new()
+        {
+            string key = typeof(T).Name;
+            if (!behs.ContainsKey(key))
+            {
+                T behavior = new T();
+                behavior.SetWorld(this);
+                behs.Add(key, behavior);
+                IUpdate update = behavior as IUpdate;
+                if (update != null) updates.Add(update);
+            }
+        }
         public T GetBehavior<T>(string name = null) where T : Behavior
         {
             string key = name;
@@ -87,6 +99,10 @@ namespace Server
             Behavior behavior;
             behs.TryGetValue(key, out behavior);
             return behavior as T;
+        }
+        public void RemoveBehavior<T>()
+        {
+            behs.Remove(typeof(T).Name);
         }
         public void Update(float tick)
         {

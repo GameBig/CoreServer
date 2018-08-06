@@ -5,10 +5,10 @@ namespace MServer
     {
         public void Run(MapInfoComponent map,uint client)
         {
-            Client player = world.Add<Client>();
             var state = world.GetComponent<StateComponent>(client);
             state.state = StateDefine.Mapping;
-            map.Add(player.id);
+            map.Add(client);
+            System.Console.WriteLine("AddPlayer::Run");
         }
     }
 }

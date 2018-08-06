@@ -5,7 +5,7 @@ namespace MServer
 {
     class RunGame:Behavior
     {
-        public async Task Run(MapInfoComponent info)
+        public async void Run(MapInfoComponent info)
         {
             var fr = info.Slibing<FrameComponent>();
             var pull = world.GetBehavior<InputPull>();
@@ -25,9 +25,9 @@ namespace MServer
                     return;
                 }
                 var message = pull.Run(info.players, fr.frame);
-                fr.frame++;
                 notify.Run(info.players, message);
                 await Task.Delay((int)(1000f / fr.hz));
+                fr.frame++;
             }
         }
         private bool isAllOver(MapInfoComponent map)

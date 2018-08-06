@@ -8,6 +8,7 @@ namespace MServer
         {
             if (world.GetBehavior<GamingChick>().Run(client))
             {
+                System.Console.WriteLine("InputDealer::Handle");
                 world.GetComponent<InputComponenet>(client).data = msg;
             }
         }

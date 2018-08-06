@@ -25,7 +25,8 @@ namespace Server.Message
             byte[] d = list.Count.ToBytes();
             foreach (var item in list)
             {
-                d.Add(item.ToBytes());
+                if (item == null) continue;
+                d = d.Add(item.ToBytes());
             }
             return d;
         }
