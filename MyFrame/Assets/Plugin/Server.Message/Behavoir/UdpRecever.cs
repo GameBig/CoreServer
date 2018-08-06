@@ -41,6 +41,10 @@ namespace Server.Message
                         await world.GetBehavior<ConDealer>(dealer)?.Run(result, con, sender);
                     }
                 }
+                catch (System.Net.Sockets.SocketException e)
+                {
+                    if (e.ErrorCode == 10054) continue;
+                }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);

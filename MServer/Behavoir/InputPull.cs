@@ -9,8 +9,11 @@ namespace MServer
             foreach (var item in players)
             {
                 var input = world.GetComponent<InputComponenet>(item);
-                message.paylods.Add(input.data);
-                input.data = null;
+                if (input != null)
+                {
+                    message.paylods.Add(input.data);
+                    input.data = null;
+                }
             }
             return message;
         }

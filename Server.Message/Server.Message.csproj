@@ -10,7 +10,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Behavoir\Connector.cs" Link="Behavoir\Connector.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Behavoir\TimeCount.cs" Link="Behavoir\TimeCount.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Behavoir\UdpInit.cs" Link="Behavoir\UdpInit.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Behavoir\UdpRecever.cs" Link="Behavoir\UdpRecever.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Behavoir\UdpSender.cs" Link="Behavoir\UdpSender.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Component\ConnectorsComponent.cs" Link="Component\ConnectorsComponent.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Component\ConTimeCounter.cs" Link="Component\ConTimeCounter.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Component\EndPointComponent.cs" Link="Component\EndPointComponent.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Component\PIDComponent.cs" Link="Component\PIDComponent.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\Component\SocketComponent.cs" Link="Component\SocketComponent.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\APDealer.cs" Link="MsgDealer\APDealer.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\Help\ByteStream.cs" Link="MsgDealer\Help\ByteStream.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\Help\IByteStream.cs" Link="MsgDealer\Help\IByteStream.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\Help\MsgMaper.cs" Link="MsgDealer\Help\MsgMaper.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\Help\PayLodList.cs" Link="MsgDealer\Help\PayLodList.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\Help\unSafeByteHelper.cs" Link="MsgDealer\Help\unSafeByteHelper.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\MsgBase\IPaylodable.cs" Link="MsgDealer\MsgBase\IPaylodable.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\MsgBase\IToBytes.cs" Link="MsgDealer\MsgBase\IToBytes.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\MsgBase\Paylod.cs" Link="MsgDealer\MsgBase\Paylod.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\Server.Message\MsgDealer\MsgBase\UdpResult.cs" Link="MsgDealer\MsgBase\UdpResult.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CoreServer\Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Behavoir\" />
+    <Folder Include="Component\" />
+    <Folder Include="MsgDealer\Help\" />
+    <Folder Include="MsgDealer\MsgBase\" />
   </ItemGroup>
 
 </Project>

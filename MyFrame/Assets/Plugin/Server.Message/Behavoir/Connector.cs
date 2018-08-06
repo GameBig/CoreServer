@@ -25,6 +25,7 @@ namespace Server.Message
                     Entity e = world.Add<Entity>();
                     e.AddComponent<EndPointComponent>().remote = result.endPoint;
                     connectors.dictionary.Add(result.endPoint, e.id);
+                    System.Console.WriteLine($"Accept::Run::ID={e.id}");
                     sender.Send(result.endPoint, ConDefine.connected);
                 }
             });
@@ -72,7 +73,9 @@ namespace Server.Message
         {
             uint eid;
             connectors.dictionary.TryGetValue(result.endPoint, out eid);
-            connectors.conTcs.SetResult(eid);
+            connectors.conTcs.SetResult(0);
+            world.Get<Entity>(eid)?.RemoveComponent<ConTimeCounter>();
+            world.RemoveBehavior<TimeCount>();
             return Task.CompletedTask;
         }
     }
@@ -82,7 +85,9 @@ namespace Server.Message
         {
             uint eid;
             connectors.dictionary.TryGetValue(result.endPoint, out eid);
-            connectors.conTcs.SetResult(eid);
+            connectors.conTcs.SetResult(0);
+            world.Get<Entity>(eid)?.RemoveComponent<ConTimeCounter>();
+            world.RemoveBehavior<TimeCount>();
             return Task.CompletedTask;
         }
     }

@@ -19,7 +19,6 @@ namespace MServer
         }
         private bool CheckState(uint client)
         {
-            System.Console.WriteLine($"MatchGame::CheckState::EntityID={client}");
             return world.GetComponent<StateComponent>(client).state == StateDefine.Waiting;
         }
     }

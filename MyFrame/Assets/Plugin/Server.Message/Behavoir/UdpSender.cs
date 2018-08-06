@@ -23,28 +23,50 @@ namespace Server.Message
             Sock.socket.SendTo(data, end.remote);
             unSafeByteHelper.Return(data);
         }
-        public Task<uint> Connect(IPEndPoint endPoint)
+        public void Send(string nName,IPaylodable paylodable)
+        {
+            var con = world.Globel.GetComponent<ConnectorsComponent>();
+            uint id;
+            if (con.connectionNames.TryGetValue(nName, out id))
+            {
+                Send(id, paylodable);
+            }
+        }
+        public Task<int> Connect(string nName,IPEndPoint endPoint)
         {
             var con = world.Globel.GetComponent<ConnectorsComponent>();
             Entity socket = world.Add<Entity>();
             socket.AddComponent<EndPointComponent>().remote = endPoint;
             con.dictionary.Add(endPoint, socket.id);
-            con.conTcs = new TaskCompletionSource<uint>();
+            con.connectionNames.Add(nName, socket.id);
+            con.conTcs = new TaskCompletionSource<int>();
+            socket.AddComponent<ConTimeCounter>();
+            world.AddBehever<TimeCount>();
             Send(endPoint, ConDefine.accept);
             return con.conTcs.Task;
         }
-        public Task<uint> Connect(string ip,int port)
+        public Task<int> Connect(string nName,string ip,int port)
         {
-            return Connect(new IPEndPoint(IPAddress.Parse(ip), port));
+            return Connect(nName,new IPEndPoint(IPAddress.Parse(ip), port));
         }
         public Task DisConnect(uint client)
         {
             var end = world.GetComponent<EndPointComponent>(client);
             if (end == null) return Task.CompletedTask;
             var con = world.Globel.GetComponent<ConnectorsComponent>();
-            con.conTcs = new TaskCompletionSource<uint>();
+            con.conTcs = new TaskCompletionSource<int>();
             Send(end.remote as IPEndPoint, ConDefine.disconnect);
             return con.conTcs.Task;
+        }
+        public Task DisConnect(string name)
+        {
+            var con = world.Globel.GetComponent<ConnectorsComponent>();
+            uint id;
+            if(con.connectionNames.TryGetValue(name,out id))
+            {
+               return DisConnect(id);
+            }
+            return Task.CompletedTask;
         }
     }
 }

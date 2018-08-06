@@ -16,11 +16,12 @@ public class Matcher : SMono
         button.onClick.AddListener(() =>
         {
             if (!matching)
-                sender.Send(client.client, new MatchReq());
+                sender.Send("game", new MatchReq());
             else
-                sender.Send(client.client, new MatchReq());
+                sender.Send("game", new MachingCancel());
             
         });
+     
         world.GetBehavior<EventSender>().Regist("matching", onMatching);
         world.GetBehavior<EventSender>().Regist("matchingcancel", onMatchingCancel);
     }
@@ -28,10 +29,17 @@ public class Matcher : SMono
     {
         waiting.SetActive(true);
         buttonText.text = "取消匹配";
+        matching = true;
     }
     private void onMatchingCancel()
     {
+        matching = false;
         waiting.SetActive(false);
         buttonText.text = "开始匹配";
+    }
+    public void Open(bool open)
+    {
+        waiting.SetActive(open);
+        button.gameObject.SetActive(open);
     }
 }

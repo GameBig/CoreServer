@@ -5,4 +5,27 @@
     <RootNamespace>Server</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Behavoir\RandomBhr.cs" Link="Behavoir\RandomBhr.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Component\RandomComponent.cs" Link="Component\RandomComponent.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Helper\GlobelAttribute.cs" Link="Helper\GlobelAttribute.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Helper\NotReflectAttribute.cs" Link="Helper\NotReflectAttribute.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Helper\ReflectLoader.cs" Link="Helper\ReflectLoader.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Helper\Tuple.cs" Link="Helper\Tuple.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Helper\WorldInitialer.cs" Link="Helper\WorldInitialer.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Interface\Behavior.cs" Link="Interface\Behavior.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Interface\Component.cs" Link="Interface\Component.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Interface\Entity.cs" Link="Interface\Entity.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Interface\IUpdate.cs" Link="Interface\IUpdate.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Interface\World.cs" Link="Interface\World.cs" />
+    <Compile Include="..\MyFrame\Assets\Plugin\CoreServer\Interface\WorldEx.cs" Link="Interface\WorldEx.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Behavoir\" />
+    <Folder Include="Component\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+
 </Project>
