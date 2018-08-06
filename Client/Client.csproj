@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\CancelOk.cs" Link="Message\CancelOk.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\FrameMessage.cs" Link="Message\FrameMessage.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\GameInitMessage.cs" Link="Message\GameInitMessage.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\GameOverMessage.cs" Link="Message\GameOverMessage.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\InitOK.cs" Link="Message\InitOK.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\InputMessage.cs" Link="Message\InputMessage.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\MachingCancel.cs" Link="Message\MachingCancel.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\Matching.cs" Link="Message\Matching.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\MatchReq.cs" Link="Message\MatchReq.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\RequestOver.cs" Link="Message\RequestOver.cs" />
+    <Compile Include="..\MyFrame\Assets\Scripts\Message\Vec2Int.cs" Link="Message\Vec2Int.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreServer\Server.csproj" />
+    <ProjectReference Include="..\Server.Message\Server.Message.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Message\" />
+  </ItemGroup>
+
+</Project>
